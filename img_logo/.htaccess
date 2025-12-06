@@ -1,0 +1,34 @@
+# Proteger diretório de logos
+# Permitir apenas acesso a arquivos de imagem
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Negar acesso a outros tipos de arquivo
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Desabilitar execução de scripts
+Options -ExecCGI
+php_flag engine off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
